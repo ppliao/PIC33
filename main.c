@@ -60,10 +60,15 @@ int main(void)
     SYSTEM_Initialize();
     while (1)
     {
+      // IO_RB14_SetHigh();
+
+      // IO_RA0_Toggle();
+      // IO_RB14_SetHigh();
       IO_RA0_SetHigh();
-      __delay_ms(20);
+      __delay_ms(100);
+      // IO_RB14_SetLow();
       IO_RA0_SetLow();
-      __delay_ms(10);
+      __delay_ms(100);
     }
     return 1; 
 }

@@ -200,6 +200,152 @@
 
 */
 #define IO_RA0_SetDigitalOutput() (_TRISA0 = 0)
+/**
+  @Summary
+    Sets the GPIO pin, RB14, high using LATB14.
+
+  @Description
+    Sets the GPIO pin, RB14, high using LATB14.
+
+  @Preconditions
+    The RB14 must be set to an output.
+
+  @Returns
+    None.
+
+  @Param
+    None.
+
+  @Example
+    <code>
+    // Set RB14 high (1)
+    IO_RB14_SetHigh();
+    </code>
+
+*/
+#define IO_RB14_SetHigh()          (_LATB14 = 1)
+/**
+  @Summary
+    Sets the GPIO pin, RB14, low using LATB14.
+
+  @Description
+    Sets the GPIO pin, RB14, low using LATB14.
+
+  @Preconditions
+    The RB14 must be set to an output.
+
+  @Returns
+    None.
+
+  @Param
+    None.
+
+  @Example
+    <code>
+    // Set RB14 low (0)
+    IO_RB14_SetLow();
+    </code>
+
+*/
+#define IO_RB14_SetLow()           (_LATB14 = 0)
+/**
+  @Summary
+    Toggles the GPIO pin, RB14, using LATB14.
+
+  @Description
+    Toggles the GPIO pin, RB14, using LATB14.
+
+  @Preconditions
+    The RB14 must be set to an output.
+
+  @Returns
+    None.
+
+  @Param
+    None.
+
+  @Example
+    <code>
+    // Toggle RB14
+    IO_RB14_Toggle();
+    </code>
+
+*/
+#define IO_RB14_Toggle()           (_LATB14 ^= 1)
+/**
+  @Summary
+    Reads the value of the GPIO pin, RB14.
+
+  @Description
+    Reads the value of the GPIO pin, RB14.
+
+  @Preconditions
+    None.
+
+  @Returns
+    None.
+
+  @Param
+    None.
+
+  @Example
+    <code>
+    uint16_t portValue;
+
+    // Read RB14
+    postValue = IO_RB14_GetValue();
+    </code>
+
+*/
+#define IO_RB14_GetValue()         _RB14
+/**
+  @Summary
+    Configures the GPIO pin, RB14, as an input.
+
+  @Description
+    Configures the GPIO pin, RB14, as an input.
+
+  @Preconditions
+    None.
+
+  @Returns
+    None.
+
+  @Param
+    None.
+
+  @Example
+    <code>
+    // Sets the RB14 as an input
+    IO_RB14_SetDigitalInput();
+    </code>
+
+*/
+#define IO_RB14_SetDigitalInput()  (_TRISB14 = 1)
+/**
+  @Summary
+    Configures the GPIO pin, RB14, as an output.
+
+  @Description
+    Configures the GPIO pin, RB14, as an output.
+
+  @Preconditions
+    None.
+
+  @Returns
+    None.
+
+  @Param
+    None.
+
+  @Example
+    <code>
+    // Sets the RB14 as an output
+    IO_RB14_SetDigitalOutput();
+    </code>
+
+*/
+#define IO_RB14_SetDigitalOutput() (_TRISB14 = 0)
 
 /**
     Section: Function Prototypes
