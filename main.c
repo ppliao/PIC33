@@ -45,22 +45,30 @@
 /**
   Section: Included Files
 */
-#include "mcc_generated_files/system.h"
+#include "mcc_generated_files/mcc.h"
+#include <xc.h>
 
+#define FCY 4000000UL 
+#include <libpic30.h>
 /*
                          Main application
  */
 int main(void)
 {
     // initialize the device
+    PIN_MANAGER_Initialize ();
     SYSTEM_Initialize();
     while (1)
     {
-        // Add your application code
+      IO_RA0_SetHigh();
+      __delay_ms(20);
+      IO_RA0_SetLow();
+      __delay_ms(10);
     }
     return 1; 
 }
 /**
  End of File
 */
+
 

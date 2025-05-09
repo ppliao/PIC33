@@ -24,7 +24,7 @@ CLEAN_SUBPROJECTS=${CLEAN_SUBPROJECTS_${SUBPROJECTS}}
 
 
 # Project Name
-PROJECTNAME=New folder
+PROJECTNAME=Pic33
 
 # Active Configuration
 DEFAULTCONF=default
