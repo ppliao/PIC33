@@ -46,34 +46,36 @@
   Section: Included Files
 */
 #include "mcc_generated_files/mcc.h"
-#include <xc.h>
 
-#define FCY 4000000UL 
-#include <libpic30.h>
+
+
 /*
                          Main application
  */
+void TMR1_CallBack(void)
+{
+    // 切換 RA0 狀態
+    IO_RA0_Toggle();
+  
+}
+
 int main(void)
 {
-    // initialize the device
-    PIN_MANAGER_Initialize ();
+    // 初始化 MCU、時鐘、Timer、I/O
     SYSTEM_Initialize();
+
+    // 設定 Timer1 的中斷 callback
+    TMR1_SetInterruptHandler(TMR1_CallBack);
+
+    // 啟動 Timer1
+    TMR1_Start();
+
     while (1)
     {
-      // IO_RB14_SetHigh();
-
-      // IO_RA0_Toggle();
-      // IO_RB14_SetHigh();
-      IO_RA0_SetHigh();
-      __delay_ms(100);
-      // IO_RB14_SetLow();
-      IO_RA0_SetLow();
-      __delay_ms(100);
+      
     }
-    return 1; 
+
+    return 1;
 }
-/**
- End of File
-*/
 
 

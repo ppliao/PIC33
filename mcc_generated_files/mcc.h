@@ -53,8 +53,9 @@
 #include "system_types.h"
 #include "reset.h"
 
-#include "watchdog.h"
 #include "reset.h"
+#include "tmr1.h"
+#include "watchdog.h"
 #include "interrupt_manager.h"
 #include "traps.h"
 
