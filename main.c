@@ -48,20 +48,22 @@
 #include "mcc_generated_files/mcc.h"
 
 
-
+volatile uint32_t interruptCounter = 0;
 /*
                          Main application
  */
 void TMR1_CallBack(void)
 {
+    //DAC3DATH += 512;
     // 切換 RA0 狀態
     IO_RA0_Toggle();
-  
+    interruptCounter++;
 }
 
 int main(void)
 {
     // 初始化 MCU、時鐘、Timer、I/O
+    IO_RA0_SetLow(); 
     SYSTEM_Initialize();
 
     // 設定 Timer1 的中斷 callback

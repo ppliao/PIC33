@@ -94,8 +94,8 @@ void TMR1_Initialize (void)
     TMR1 = 0x00;
     //Period = 2 s; Frequency = 4000000 Hz; PR 31249; 
     PR1 = 0x7A11;
-    //TCKPS 1:256; PRWIP Write complete; TMWIP Write complete; TON enabled; TSIDL disabled; TCS External; TECS FRC; TSYNC disabled; TMWDIS disabled; TGATE disabled; 
-    T1CON = 0x8332;
+    //TCKPS 1:256; PRWIP Write complete; TMWIP Write complete; TON enabled; TSIDL disabled; TCS External; TECS FOSC; TSYNC disabled; TMWDIS disabled; TGATE disabled; 
+    T1CON = 0x8232;
 
     if(TMR1_InterruptHandler == NULL)
     {
