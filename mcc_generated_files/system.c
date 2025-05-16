@@ -58,7 +58,7 @@
 #pragma config BSLIM = 8191    //Boot Segment Flash Page Address Limit bits->8191
 
 // FOSCSEL
-#pragma config FNOSC = FRCDIVN    //Oscillator Source Selection->Internal Fast RC (FRC) Oscillator with postscaler
+#pragma config FNOSC = FRC    //Oscillator Source Selection->Internal Fast RC (FRC)
 #pragma config IESO = OFF    //Two-speed Oscillator Start-up Enable bit->Start up with user-selected oscillator source
 
 // FOSC
@@ -117,13 +117,15 @@
 #include "system_types.h"
 #include "interrupt_manager.h"
 #include "traps.h"
+#include "mccp5_compare.h"
 #include "tmr1.h"
 
 void SYSTEM_Initialize(void)
 {
     PIN_MANAGER_Initialize();
-    CLOCK_Initialize();
     INTERRUPT_Initialize();
+    CLOCK_Initialize();
+    MCCP5_COMPARE_Initialize();
     TMR1_Initialize();
     INTERRUPT_GlobalEnable();
     SYSTEM_CORCONModeOperatingSet(CORCON_MODE_PORVALUES);

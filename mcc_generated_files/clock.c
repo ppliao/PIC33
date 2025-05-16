@@ -48,16 +48,16 @@
 
 void CLOCK_Initialize(void)
 {
-    // FRCDIV FRC/2; PLLPRE 1; DOZE 1:8; DOZEN disabled; ROI disabled; 
-    CLKDIV = 0x3101;
+    // FRCDIV FRC/1; PLLPRE 1; DOZE 1:8; DOZEN disabled; ROI disabled; 
+    CLKDIV = 0x3001;
     // PLLFBDIV 150; 
     PLLFBD = 0x96;
     // TUN Center frequency; 
     OSCTUN = 0x00;
     // POST1DIV 1:4; VCODIV FVCO/4; POST2DIV 1:1; 
     PLLDIV = 0x41;
-    // APLLEN enabled; FRCSEL Primary Oscillator; APLLPRE 1:1; 
-    ACLKCON1 = 0x8001;
+    // APLLEN disabled; FRCSEL FRC; APLLPRE 1:1; 
+    ACLKCON1 = 0x101;
     // APLLFBDIV 100; 
     APLLFBD1 = 0x64;
     // APOST1DIV 1:4; APOST2DIV 1:1; AVCODIV FVCO/2; 
@@ -86,8 +86,8 @@ void CLOCK_Initialize(void)
     PMD7 = 0x00;
     // DMTMD enabled; CLC3MD enabled; OPAMPMD enabled; BIASMD enabled; CLC4MD enabled; SENT2MD enabled; SENT1MD enabled; CLC1MD enabled; CLC2MD enabled; 
     PMD8 = 0x00;
-    // CF no clock failure; NOSC FRCDIV; CLKLOCK unlocked; OSWEN Switch is Complete; 
-    __builtin_write_OSCCONH((uint8_t) (0x07));
+    // CF no clock failure; NOSC FRC; CLKLOCK unlocked; OSWEN Switch is Complete; 
+    __builtin_write_OSCCONH((uint8_t) (0x00));
     __builtin_write_OSCCONL((uint8_t) (0x00));
 }
 

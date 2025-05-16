@@ -2,7 +2,7 @@
 
 manifest_file_version: 1.0.0
 project: TEST
-creation_date: 2025-05-13T11:36:03.628+08:00[Asia/Taipei]
+creation_date: 2025-05-16T16:35:40.533+08:00[Asia/Taipei]
 operating_system: Windows 11
 mcc_mode: IDE
 mcc_mode_version: v6.25
@@ -18,5 +18,4 @@ device_library: {library_class: com.microchip.mcc.mcu16.Mcu16PeripheralLibrary, 
     / dsPIC33 / PIC32MM MCUs, version: 1.171.5}
 packs: {name: dsPIC33CK-MP_DFP, version: 1.15.423}
 modules:
-- {name: com.microchip.mcc.motorbench.MotorBenchLibrary, type: CLASSIC, version: 2.50.0}
 - {name: com.microchip.mcc.mcu16.Mcu16PeripheralLibrary, type: CLASSIC, version: 1.171.5}

@@ -47,34 +47,23 @@
 */
 #include "mcc_generated_files/mcc.h"
 
-
-volatile uint32_t interruptCounter = 0;
-/*
-                         Main application
- */
-void TMR1_CallBack(void)
+/*void TMR1_CallBack(void)
 {
-    //DAC3DATH += 512;
-    // 切換 RA0 狀態
     IO_RA0_Toggle();
-    interruptCounter++;
-}
+}*/
 
 int main(void)
 {
-    // 初始化 MCU、時鐘、Timer、I/O
-    IO_RA0_SetLow(); 
     SYSTEM_Initialize();
+    
+    MCCP5_COMPARE_DualCompareValueSet(500,2000); 
+    MCCP5_COMPARE_Start();
 
-    // 設定 Timer1 的中斷 callback
-    TMR1_SetInterruptHandler(TMR1_CallBack);
-
-    // 啟動 Timer1
-    TMR1_Start();
-
+    //TMR1_SetInterruptHandler(TMR1_CallBack);
+    //TMR1_Start();
     while (1)
     {
-      
+        
     }
 
     return 1;
