@@ -54,12 +54,12 @@ void CLOCK_Initialize(void)
     PLLFBD = 0x96;
     // TUN Center frequency; 
     OSCTUN = 0x00;
-    // POST1DIV 1:4; VCODIV FVCO/4; POST2DIV 1:1; 
-    PLLDIV = 0x41;
+    // POST1DIV 1:2; VCODIV FVCO/2; POST2DIV 1:2; 
+    PLLDIV = 0x222;
     // APLLEN disabled; FRCSEL FRC; APLLPRE 1:1; 
     ACLKCON1 = 0x101;
-    // APLLFBDIV 100; 
-    APLLFBD1 = 0x64;
+    // APLLFBDIV 125; 
+    APLLFBD1 = 0x7D;
     // APOST1DIV 1:4; APOST2DIV 1:1; AVCODIV FVCO/2; 
     APLLDIV1 = 0x241;
     // ROEN disabled; ROSWEN disabled; ROSLP disabled; ROSEL FOSC; ROOUT disabled; ROSIDL disabled; 
@@ -86,9 +86,12 @@ void CLOCK_Initialize(void)
     PMD7 = 0x00;
     // DMTMD enabled; CLC3MD enabled; OPAMPMD enabled; BIASMD enabled; CLC4MD enabled; SENT2MD enabled; SENT1MD enabled; CLC1MD enabled; CLC2MD enabled; 
     PMD8 = 0x00;
-    // CF no clock failure; NOSC FRC; CLKLOCK unlocked; OSWEN Switch is Complete; 
-    __builtin_write_OSCCONH((uint8_t) (0x00));
-    __builtin_write_OSCCONL((uint8_t) (0x00));
+    // CF no clock failure; NOSC FRCPLL; CLKLOCK unlocked; OSWEN Switch is Complete; 
+    __builtin_write_OSCCONH((uint8_t) (0x01));
+    __builtin_write_OSCCONL((uint8_t) (0x01));
+    // Wait for Clock switch to occur
+    while (OSCCONbits.OSWEN != 0);
+    while (OSCCONbits.LOCK != 1);
 }
 
 bool CLOCK_AuxPllLockStatusGet()

@@ -56,8 +56,8 @@ int main(void)
 {
     SYSTEM_Initialize();
     
-    MCCP5_COMPARE_DualCompareValueSet(500,2000); 
-    MCCP5_COMPARE_Start();
+    //MCCP5_COMPARE_DualCompareValueSet(500,2000); 
+    //MCCP5_COMPARE_Start();
 
     //TMR1_SetInterruptHandler(TMR1_CallBack);
     //TMR1_Start();
@@ -65,8 +65,6 @@ int main(void)
     {
         
     }
-
-    return 1;
 }
 
 
