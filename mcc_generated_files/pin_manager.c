@@ -62,13 +62,13 @@ void PIN_MANAGER_Initialize (void)
      * Setting the Output Latch SFR(s)
      ***************************************************************************/
     LATA = 0x0000;
-    LATB = 0x0201;
+    LATB = 0x0601;
 
     /****************************************************************************
      * Setting the GPIO Direction SFR(s)
      ***************************************************************************/
-    TRISA = 0x0016;
-    TRISB = 0x3FFD;
+    TRISA = 0x001E;
+    TRISB = 0x5FFD;
 
     /****************************************************************************
      * Setting the Weak Pull Up and Weak Pull Down SFR(s)

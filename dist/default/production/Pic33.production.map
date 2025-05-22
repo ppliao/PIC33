@@ -24,8 +24,8 @@ Command:
   build/default/production/mcc_generated_files/system.o \
   build/default/production/mcc_generated_files/traps.o \
   build/default/production/mcc_generated_files/pin_manager.o \
-  build/default/production/main.o \
   build/default/production/mcc_generated_files/pwm.o \
+  build/default/production/main.o \
   --local-stack \
   --defsym=__MPLAB_BUILD=1 \
   -Tp33CK32MP102.gld.00 \
@@ -94,11 +94,11 @@ Default Scalar Model: Small
 section                    address   length (PC units)   length (bytes) (dec)
 -------                    -------   -----------------   --------------------
 .text                        0x200               0x1fa           0x2f7  (759)
-.text                        0x3fa               0x36c           0x522  (1314)
-.dinit                       0x766                0x16            0x21  (33)
-.text                        0x77c                0x1e            0x2d  (45)
+.text                        0x3fa               0x3ce           0x5b5  (1461)
+.dinit                       0x7c8                0x16            0x21  (33)
+.text                        0x7de                0x1e            0x2d  (45)
 
-                   Total "program" memory used (bytes):          0x867  (2151) 6%
+                   Total "program" memory used (bytes):          0x8fa  (2298) 6%
 
 
 "data" Memory  [Origin = 0x1000, Length = 0x2000]
@@ -140,49 +140,51 @@ External Symbols in Program Memory (by address):
                   0x000248                  __data_init_extended
                   0x0003f4                  __DefaultInterrupt
                   0x0003fa                  _PWM_Initialize
-                  0x000476                  _PWM_Generator1_Tasks
-                  0x000494                  _PWM_EventA_Tasks
-                  0x0004b2                  _PWM_EventB_Tasks
-                  0x0004d0                  _PWM_EventC_Tasks
-                  0x0004ee                  _PWM_EventD_Tasks
-                  0x00050c                  _PWM_EventE_Tasks
-                  0x00052a                  _PWM_EventF_Tasks
-                  0x000540                  _RESET_GetCause
-                  0x000652                  _RESET_CauseClearAll
-                  0x00065c                  _CLOCK_Initialize
-                  0x0006ca                  _CLOCK_AuxPllLockStatusGet
-                  0x000706                  _SYSTEM_Initialize
-                  0x00071c                  _PIN_MANAGER_Initialize
-                  0x00077c                  _where_was_i
-                  0x00078c                  _INTERRUPT_Initialize
-                  0x000794                  _main
+                  0x0004ba                  _PWM_Generator1_Tasks
+                  0x0004d8                  _PWM_Generator2_Tasks
+                  0x0004f6                  _PWM_EventA_Tasks
+                  0x000514                  _PWM_EventB_Tasks
+                  0x000532                  _PWM_EventC_Tasks
+                  0x000550                  _PWM_EventD_Tasks
+                  0x00056e                  _PWM_EventE_Tasks
+                  0x00058c                  _PWM_EventF_Tasks
+                  0x0005a2                  _RESET_GetCause
+                  0x0006b4                  _RESET_CauseClearAll
+                  0x0006be                  _CLOCK_Initialize
+                  0x00072c                  _CLOCK_AuxPllLockStatusGet
+                  0x000768                  _SYSTEM_Initialize
+                  0x00077e                  _PIN_MANAGER_Initialize
+                  0x0007de                  _where_was_i
+                  0x0007ee                  _INTERRUPT_Initialize
+                  0x0007f6                  _main
                   0x005f00                  __FSEC.sec
 
 External Symbols in Program Memory (by name):
 
-                  0x0006ca                  _CLOCK_AuxPllLockStatusGet
-                  0x00065c                  _CLOCK_Initialize
-                  0x00078c                  _INTERRUPT_Initialize
-                  0x00071c                  _PIN_MANAGER_Initialize
-                  0x000494                  _PWM_EventA_Tasks
-                  0x0004b2                  _PWM_EventB_Tasks
-                  0x0004d0                  _PWM_EventC_Tasks
-                  0x0004ee                  _PWM_EventD_Tasks
-                  0x00050c                  _PWM_EventE_Tasks
-                  0x00052a                  _PWM_EventF_Tasks
-                  0x000476                  _PWM_Generator1_Tasks
+                  0x00072c                  _CLOCK_AuxPllLockStatusGet
+                  0x0006be                  _CLOCK_Initialize
+                  0x0007ee                  _INTERRUPT_Initialize
+                  0x00077e                  _PIN_MANAGER_Initialize
+                  0x0004f6                  _PWM_EventA_Tasks
+                  0x000514                  _PWM_EventB_Tasks
+                  0x000532                  _PWM_EventC_Tasks
+                  0x000550                  _PWM_EventD_Tasks
+                  0x00056e                  _PWM_EventE_Tasks
+                  0x00058c                  _PWM_EventF_Tasks
+                  0x0004ba                  _PWM_Generator1_Tasks
+                  0x0004d8                  _PWM_Generator2_Tasks
                   0x0003fa                  _PWM_Initialize
-                  0x000652                  _RESET_CauseClearAll
-                  0x000540                  _RESET_GetCause
-                  0x000706                  _SYSTEM_Initialize
+                  0x0006b4                  _RESET_CauseClearAll
+                  0x0005a2                  _RESET_GetCause
+                  0x000768                  _SYSTEM_Initialize
                   0x0003f4                  __DefaultInterrupt
                   0x005f00                  __FSEC.sec
                   0x000248                  __data_init
                   0x000248                  __data_init_extended
                   0x00023c                  __psv_init
                   0x000200                  __resetPRI
-                  0x000794                  _main
-                  0x00077c                  _where_was_i
+                  0x0007f6                  _main
+                  0x0007de                  _where_was_i
 
 Memory Configuration
 
@@ -217,8 +219,8 @@ LOAD build/default/production/mcc_generated_files/mcc.o
 LOAD build/default/production/mcc_generated_files/system.o
 LOAD build/default/production/mcc_generated_files/traps.o
 LOAD build/default/production/mcc_generated_files/pin_manager.o
-LOAD build/default/production/main.o
 LOAD build/default/production/mcc_generated_files/pwm.o
+LOAD build/default/production/main.o
                     0x0001                  __MPLAB_BUILD = 0x1
 LOAD p33CK32MP102
 LOAD c:/program files/microchip/xc-dsc/v3.21/bin/bin/../../lib\libfx-elf.a
@@ -339,10 +341,10 @@ __FALTREG
  .comment           0x0160         0x58 build/default/production/mcc_generated_files/system.o
  .comment           0x01b8         0x58 build/default/production/mcc_generated_files/traps.o
  .comment           0x0210         0x58 build/default/production/mcc_generated_files/pin_manager.o
- .comment           0x0268         0x58 build/default/production/main.o
- .comment           0x02c0         0x58 build/default/production/mcc_generated_files/pwm.o
+ .comment           0x0268         0x58 build/default/production/mcc_generated_files/pwm.o
+ .comment           0x02c0         0x58 build/default/production/main.o
 
-.debug_info         0x0000       0x27d8
+.debug_info         0x0000       0x2ae2
  *(.debug_info)
  .debug_info        0x0000        0x695 build/default/production/mcc_generated_files/clock.o
  .debug_info        0x0695        0x1fe build/default/production/mcc_generated_files/interrupt_manager.o
@@ -351,8 +353,8 @@ __FALTREG
  .debug_info        0x0e13        0x3e5 build/default/production/mcc_generated_files/system.o
  .debug_info        0x11f8        0x6d4 build/default/production/mcc_generated_files/traps.o
  .debug_info        0x18cc        0x2ea build/default/production/mcc_generated_files/pin_manager.o
- .debug_info        0x1bb6        0x1d1 build/default/production/main.o
- .debug_info        0x1d87        0xa51 build/default/production/mcc_generated_files/pwm.o
+ .debug_info        0x1bb6        0xd5b build/default/production/mcc_generated_files/pwm.o
+ .debug_info        0x2911        0x1d1 build/default/production/main.o
  *(.gnu.linkonce.wi.*)
 
 .debug_abbrev       0x0000        0x5f1
@@ -364,10 +366,10 @@ __FALTREG
  .debug_abbrev      0x025c         0xc3 build/default/production/mcc_generated_files/system.o
  .debug_abbrev      0x031f        0x13d build/default/production/mcc_generated_files/traps.o
  .debug_abbrev      0x045c         0x6f build/default/production/mcc_generated_files/pin_manager.o
- .debug_abbrev      0x04cb         0x3d build/default/production/main.o
- .debug_abbrev      0x0508         0xe9 build/default/production/mcc_generated_files/pwm.o
+ .debug_abbrev      0x04cb         0xe9 build/default/production/mcc_generated_files/pwm.o
+ .debug_abbrev      0x05b4         0x3d build/default/production/main.o
 
-.debug_line         0x0000        0xaae
+.debug_line         0x0000        0xadb
  *(.debug_line)
  .debug_line        0x0000        0x15d build/default/production/mcc_generated_files/clock.o
  .debug_line        0x015d         0x5a build/default/production/mcc_generated_files/interrupt_manager.o
@@ -377,10 +379,10 @@ __FALTREG
  .debug_line        0x03fe        0x17e build/default/production/mcc_generated_files/system.o
  .debug_line        0x057c        0x1c0 build/default/production/mcc_generated_files/traps.o
  .debug_line        0x073c        0x13d build/default/production/mcc_generated_files/pin_manager.o
- .debug_line        0x0879         0x3e build/default/production/main.o
- .debug_line        0x08b7        0x1f7 build/default/production/mcc_generated_files/pwm.o
+ .debug_line        0x0879        0x224 build/default/production/mcc_generated_files/pwm.o
+ .debug_line        0x0a9d         0x3e build/default/production/main.o
 
-.debug_frame        0x0000        0x4fa
+.debug_frame        0x0000        0x52e
  *(.debug_frame)
  .debug_frame       0x0000         0x48 build/default/production/mcc_generated_files/clock.o
  .debug_frame       0x0048         0x2e build/default/production/mcc_generated_files/interrupt_manager.o
@@ -388,8 +390,8 @@ __FALTREG
  .debug_frame       0x018e         0x62 build/default/production/mcc_generated_files/system.o
  .debug_frame       0x01f0        0x114 build/default/production/mcc_generated_files/traps.o
  .debug_frame       0x0304         0x2e build/default/production/mcc_generated_files/pin_manager.o
- .debug_frame       0x0332         0x2e build/default/production/main.o
- .debug_frame       0x0360        0x19a build/default/production/mcc_generated_files/pwm.o
+ .debug_frame       0x0332        0x1ce build/default/production/mcc_generated_files/pwm.o
+ .debug_frame       0x0500         0x2e build/default/production/main.o
 
 .debug_str          0x0000         0x7b
  *(.debug_str)
@@ -401,10 +403,10 @@ __FALTREG
  .debug_str         0x0061          0x0 build/default/production/mcc_generated_files/system.o
  .debug_str         0x0061          0xd build/default/production/mcc_generated_files/traps.o
  .debug_str         0x006e          0xd build/default/production/mcc_generated_files/pin_manager.o
- .debug_str         0x007b          0x0 build/default/production/main.o
  .debug_str         0x007b          0x0 build/default/production/mcc_generated_files/pwm.o
+ .debug_str         0x007b          0x0 build/default/production/main.o
 
-.debug_loc          0x0000        0x520
+.debug_loc          0x0000        0x560
  *(.debug_loc)
  .debug_loc         0x0000         0x40 build/default/production/mcc_generated_files/clock.o
  .debug_loc         0x0040         0x20 build/default/production/mcc_generated_files/interrupt_manager.o
@@ -412,8 +414,8 @@ __FALTREG
  .debug_loc         0x01a0         0x60 build/default/production/mcc_generated_files/system.o
  .debug_loc         0x0200        0x100 build/default/production/mcc_generated_files/traps.o
  .debug_loc         0x0300         0x20 build/default/production/mcc_generated_files/pin_manager.o
- .debug_loc         0x0320         0x20 build/default/production/main.o
- .debug_loc         0x0340        0x1e0 build/default/production/mcc_generated_files/pwm.o
+ .debug_loc         0x0320        0x220 build/default/production/mcc_generated_files/pwm.o
+ .debug_loc         0x0540         0x20 build/default/production/main.o
 
 .debug_macinfo
  *(.debug_macinfo)
@@ -421,7 +423,7 @@ __FALTREG
 .debug_pubnames
  *(.debug_pubnames)
 
-.debug_ranges       0x0000        0x188
+.debug_ranges       0x0000        0x198
  *(.debug_ranges)
  .debug_ranges      0x0000         0x18 build/default/production/mcc_generated_files/clock.o
  .debug_ranges      0x0018         0x10 build/default/production/mcc_generated_files/interrupt_manager.o
@@ -429,10 +431,10 @@ __FALTREG
  .debug_ranges      0x0080         0x20 build/default/production/mcc_generated_files/system.o
  .debug_ranges      0x00a0         0x48 build/default/production/mcc_generated_files/traps.o
  .debug_ranges      0x00e8         0x10 build/default/production/mcc_generated_files/pin_manager.o
- .debug_ranges      0x00f8         0x10 build/default/production/main.o
- .debug_ranges      0x0108         0x80 build/default/production/mcc_generated_files/pwm.o
+ .debug_ranges      0x00f8         0x90 build/default/production/mcc_generated_files/pwm.o
+ .debug_ranges      0x0188         0x10 build/default/production/main.o
 
-.debug_aranges      0x0000        0x228
+.debug_aranges      0x0000        0x238
  *(.debug_aranges)
  .debug_aranges
                     0x0000         0x28 build/default/production/mcc_generated_files/clock.o
@@ -449,9 +451,9 @@ __FALTREG
  .debug_aranges
                     0x0158         0x20 build/default/production/mcc_generated_files/pin_manager.o
  .debug_aranges
-                    0x0178         0x20 build/default/production/main.o
+                    0x0178         0xa0 build/default/production/mcc_generated_files/pwm.o
  .debug_aranges
-                    0x0198         0x90 build/default/production/mcc_generated_files/pwm.o
+                    0x0218         0x20 build/default/production/main.o
                     0x0000                  WREG0 = 0x0
                     0x0000                  _WREG0 = 0x0
                     0x0002                  WREG1 = 0x2
@@ -2882,9 +2884,9 @@ __c30_signature
  __c30_signature
                     0x0024          0x6 build/default/production/mcc_generated_files/pin_manager.o
  __c30_signature
-                    0x002a          0x6 build/default/production/main.o
+                    0x002a          0x6 build/default/production/mcc_generated_files/pwm.o
  __c30_signature
-                    0x0030          0x6 build/default/production/mcc_generated_files/pwm.o
+                    0x0030          0x6 build/default/production/main.o
  __c30_signature
                     0x0036          0x6 c:/program files/microchip/xc-dsc/v3.21/bin/bin/../../lib\libc99-pic30-elf.a(crt0_extendedch.o)
  __c30_signature
@@ -2986,44 +2988,46 @@ mcc_generated_files/where_was_i.s.scn1
  .ivt._SoftTrapError
                   0x000010          0x2 build/default/production/mcc_generated_files/traps.o
 
-.text             0x0003fa        0x36c
- .text            0x0003fa        0x146 build/default/production/mcc_generated_files/pwm.o
+.text             0x0003fa        0x3ce
+ .text            0x0003fa        0x1a8 build/default/production/mcc_generated_files/pwm.o
                   0x0003fa                  _PWM_Initialize
-                  0x00046e                  _PWM_Generator1_CallBack
-                  0x000476                  _PWM_Generator1_Tasks
-                  0x00048c                  _PWM_EventA_CallBack
-                  0x000494                  _PWM_EventA_Tasks
-                  0x0004aa                  _PWM_EventB_CallBack
-                  0x0004b2                  _PWM_EventB_Tasks
-                  0x0004c8                  _PWM_EventC_CallBack
-                  0x0004d0                  _PWM_EventC_Tasks
-                  0x0004e6                  _PWM_EventD_CallBack
-                  0x0004ee                  _PWM_EventD_Tasks
-                  0x000504                  _PWM_EventE_CallBack
-                  0x00050c                  _PWM_EventE_Tasks
-                  0x000522                  _PWM_EventF_CallBack
-                  0x00052a                  _PWM_EventF_Tasks
- .text            0x000540        0x11c build/default/production/mcc_generated_files/reset.o
-                  0x000540                  _RESET_GetCause
-                  0x000548                  _RESET_CauseHandler
-                  0x000652                  _RESET_CauseClearAll
- .text            0x00065c         0x86 build/default/production/mcc_generated_files/clock.o
-                  0x00065c                  _CLOCK_Initialize
-                  0x0006ca                  _CLOCK_AuxPllLockStatusGet
- .text            0x0006e2         0x3a build/default/production/mcc_generated_files/system.o
-                  0x000706                  _SYSTEM_Initialize
- .text            0x00071c         0x2a build/default/production/mcc_generated_files/pin_manager.o
-                  0x00071c                  _PIN_MANAGER_Initialize
- .text            0x000746         0x20 build/default/production/mcc_generated_files/traps.o
-                  0x000746                  _TRAPS_halt_on_error
+                  0x0004b2                  _PWM_Generator1_CallBack
+                  0x0004ba                  _PWM_Generator1_Tasks
+                  0x0004d0                  _PWM_Generator2_CallBack
+                  0x0004d8                  _PWM_Generator2_Tasks
+                  0x0004ee                  _PWM_EventA_CallBack
+                  0x0004f6                  _PWM_EventA_Tasks
+                  0x00050c                  _PWM_EventB_CallBack
+                  0x000514                  _PWM_EventB_Tasks
+                  0x00052a                  _PWM_EventC_CallBack
+                  0x000532                  _PWM_EventC_Tasks
+                  0x000548                  _PWM_EventD_CallBack
+                  0x000550                  _PWM_EventD_Tasks
+                  0x000566                  _PWM_EventE_CallBack
+                  0x00056e                  _PWM_EventE_Tasks
+                  0x000584                  _PWM_EventF_CallBack
+                  0x00058c                  _PWM_EventF_Tasks
+ .text            0x0005a2        0x11c build/default/production/mcc_generated_files/reset.o
+                  0x0005a2                  _RESET_GetCause
+                  0x0005aa                  _RESET_CauseHandler
+                  0x0006b4                  _RESET_CauseClearAll
+ .text            0x0006be         0x86 build/default/production/mcc_generated_files/clock.o
+                  0x0006be                  _CLOCK_Initialize
+                  0x00072c                  _CLOCK_AuxPllLockStatusGet
+ .text            0x000744         0x3a build/default/production/mcc_generated_files/system.o
+                  0x000768                  _SYSTEM_Initialize
+ .text            0x00077e         0x2a build/default/production/mcc_generated_files/pin_manager.o
+                  0x00077e                  _PIN_MANAGER_Initialize
+ .text            0x0007a8         0x20 build/default/production/mcc_generated_files/traps.o
+                  0x0007a8                  _TRAPS_halt_on_error
 
-.dinit            0x000766         0x16
- .dinit           0x000766         0x16 data_init
+.dinit            0x0007c8         0x16
+ .dinit           0x0007c8         0x16 data_init
 
-.text             0x00077c         0x1e
- .text            0x00077c         0x10 build/default/production/mcc_generated_files/where_was_i.o
-                  0x00077c                  _where_was_i
- .text            0x00078c          0x8 build/default/production/mcc_generated_files/interrupt_manager.o
-                  0x00078c                  _INTERRUPT_Initialize
- .text            0x000794          0x6 build/default/production/main.o
-                  0x000794                  _main
+.text             0x0007de         0x1e
+ .text            0x0007de         0x10 build/default/production/mcc_generated_files/where_was_i.o
+                  0x0007de                  _where_was_i
+ .text            0x0007ee          0x8 build/default/production/mcc_generated_files/interrupt_manager.o
+                  0x0007ee                  _INTERRUPT_Initialize
+ .text            0x0007f6          0x6 build/default/production/main.o
+                  0x0007f6                  _main
